@@ -2,10 +2,65 @@
 
 \begin{itemize}
 \item[(a)]
-\todo
+By definition \hbm{A2}{2.3}
+\[ \Gamma: \gamma(t) = 2(\cos(t) + i\sin(t)) = 2e^{it},\;\; (t\in[0,2\pi]) \]
+
 \item[(b)]
-\todo
+We use the polar form from above,
+\begin{eqnarray*}
+\overline{\gamma(t)}
+	&=& 2e^{-it}\\
+\\
+\gamma'(t)
+	&=& 2ie^{it}
+\end{eqnarray*}
+So,\hbm{B1}{2.1}
+\begin{eqnarray*}
+\int_\Gamma \overline{z}\,dz
+	&=& \int_0^{2\pi} \left( 2e^{-it} 2ie^{it} \right) \, dt \\
+	&=& \int_0^{2\pi} 4i\,dt \\
+	&=& \left[ 4it \right]_0^{2\pi} \\
+	&=& 8\pi i
+\end{eqnarray*}
+
 \item[(c)]
-\todo
+Let
+\[ f(z) = \frac{ 2\sin z }{ \overline{z}^2+1 } \]
+then, $f$ is continuous on $\Gamma$ by combination rules, where $\Gamma$
+has length $L=4\pi$
+
+
+So, using the triangle inequality\hbm{A1}{5.2(a)}
+\begin{eqnarray*}
+|2\sin z|
+	&=& \left| 2\frac{1}{2i} \left( e^{iz} - e^{-iz} \right) \right| \\
+	&=& \left| -i \left( e^{iz} - e^{-iz} \right) \right| \\
+	&\le& \left| e^{iz} \right| + \left| e^{-iz} \right| \\
+	&=& e^{\RE\,z} + e^{-\RE\,z} \\
+	&<& 2e^2
+\end{eqnarray*}
+%%
+And, using the backward triangale inequality\hbm{A1}{5.2(b)}
+\begin{eqnarray*}
+\left| \overline{z}^2+1 \right|
+	&\ge& \left| z \right|^2 - |1| \\
+	&=& 4-1 \\
+	&=& 3
+\end{eqnarray*}
+%%
+So,
+\begin{eqnarray*}
+|f(z)|	&=& \left| \frac{ 2\sin z }{ \overline{z}^2+1 } \right| \\
+	&=& \frac{ |2\sin z| }{ \left| \overline{z}^2+1 \right| } \\
+	&\le& \frac{2e^2}{3} \\
+	&=& M
+\end{eqnarray*}
+%%
+then by the Estimation Theorem.\hbm{B1}{4.3}
+\[
+\left| \int_\Gamma \frac{ 2\sin z }{ \overline{z}^2+1 }\,dz \right|
+\le ML = \frac{2e^2}{3} 4\pi = \frac{8\pi e^2}{3} 
+\]
+
 \end{itemize}
 
