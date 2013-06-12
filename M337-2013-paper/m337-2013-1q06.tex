@@ -2,8 +2,43 @@
 
 \begin{itemize}
 \item[(a)]
-\todo
+
+We apply Rouch\'{e}'s Theorem for both cases.\hbm{C2}{2.4}
+
+\begin{itemize}
+\item[(i)]
+
+Let $g_1(z)=iz^5$, then
+\[
+|f(z)-g_1(z)| = |5z^2-3i| \le 5|z|^2 +|3i| = 23 < 32 = |g_1(z)|
+\]
+Since, $f$ and $g_1$ are analytic on $\Complex$ and $C_1$ is a
+simple-closed contour in $\Complex$, $f$ has the same number of zeros
+as $g_1$ inside $C_1$, namely 5, and none on $C_1$.
+
+\item[(ii)]
+
+Let $g_2(z)=5z^2$, then
+\[
+|f(z)-g_2(z)| = |iz^5-3i| \le |z|^5+|-3i| = 4 < 5 = |g_2(z)|
+\]
+Since, $f$ and $g_2$ are analytic on $\Complex$ and $C_2$ is a
+simple-closed contour in $\Complex$, $f$ has the same number of zeros
+as $g_2$ inside $C_2$, namely 2, and none on $C_2$.
+
+\end{itemize}
+
 \item[(b)]
-\todo
+
+From part (a) we know that $f$ has $5-2=3$ zeros in the annulus
+$\{z:1\le|z|<2\}$.
+Now, since for $|z|=1$
+\[
+|f(z)| = |iz^5+5z^2-3i| \ge |iz^5| - 5|z|^2 - |3i| = 9 > 0
+\]
+then $f$ has no zeros on $C_2$, so it has exactly 3 zeros in the open
+annulus $\{z:1<|z|<2\}$, hence it follows that $f(z)=0$ has 3 solutions
+in the annulus.
+
 \end{itemize}
 
