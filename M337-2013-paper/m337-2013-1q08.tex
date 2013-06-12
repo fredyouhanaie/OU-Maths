@@ -2,10 +2,64 @@
 
 \begin{itemize}
 \item[(a)]
-\todo
+
+The iteration sequence
+\[
+z_{n+1} = 15z_n^2 + 3z_n + \frac{1}{16}
+\]
+is conjugate to the iteration sequence\hbm{D3}{2.1}
+\[
+w_{n+1} = w_n+d
+\]
+where
+\[
+d = \frac{15}{16} + \frac{3}{2} - \frac{9}{4} = \frac{15+24-36}{16} = \frac{3}{16}
+\]
+so, $w_{n+1} = w_n+\frac{3}{16}$.
+The conjugating function is
+\[
+h(z) = 15z+\frac{1}{2}\times3 = 15z+\frac{3}{2}
+\]
+So, $w_0 = h(z_0) = h(0) = 0+\frac{3}{2} = \frac{3}{2}$
+
 \item[(b)]
-\todo
+
+$P_{\frac{3}{16}}$ has fixed points at $z$, where $z^2+\frac{3}{16}=z$, these are the solutions to the equation
+\[
+z^2-z+\frac{3}{16}
+\]
+So
+\[
+z = \frac{ 1 \pm \sqrt{1 - 12/16} }{ 2 } = \frac{ 1 \pm \sqrt{1/4} }{ 2 } = \frac{1}{2}\pm\frac{1}{4}
+\]
+Hence, the fixed points of $P_{\frac{3}{16}}$ are $\frac{3}{4}$ and $\frac{1}{4}$.
+
+Now, $P'_{\frac{3}{16}}(z) = 2z$, so
+\[ \left|P'_{\frac{3}{16}}\left(\frac{3}{4}\right)\right| = \frac{6}{4} = \frac{3}{2} > 1 \]
+and
+\[ \left|P'_{\frac{3}{16}}\left(\frac{1}{4}\right)\right| = \frac{2}{4} = \frac{1}{2} < 1 \]
+Hence, $\frac{1}{4}$ is an attracting fixed point and $\frac{3}{4}$ is a repelling one.
+
 \item[(c)]
-\todo
+
+Let $c=-\frac{3}{2}+i$, then it appears from the diagram that $c$ is
+outside the Mandelbrot set.\hbm{D3}{4.3}
+
+Using the specificion for $M$\hbm{D3}{4.5}
+\[
+|P_c(0)| = |-3/2+i| = \sqrt{9/4+1} = \sqrt{13/4} < 2
+\]
+We go for the next iteration:
+\begin{eqnarray*}
+|P_c^{(2)}(0)|
+	&=& |(-3/2+i)^2-3/2+i| \\
+	&=& |9/4-1-3i-3/2+i| \\
+	&=& |-1/4-2i| \\
+	&=& \sqrt{1/16+4} \\
+	&=& \sqrt{65/4} \\
+	&\simeq& 4.0 > 2
+\end{eqnarray*}
+Hence, $c$ lies outside the Mandelbrot set, $c\not\in M$.
+
 \end{itemize}
 
