@@ -1,13 +1,14 @@
 \documentclass[a4paper,fleqn,12pt,twoside]{article}
 
 \parindent=0pt
-\parskip=2pt
+%\parskip=2pt
 
 \usepackage{amsfonts}	%% for \mathbb
 \usepackage{bm}		%% bold math symbols
 \usepackage{tikz}
 \usepackage{placeins}
-\usepackage{hyperref}
+\usepackage{hyperref}	%% for the \href etc.
+\usepackage{mparhack}	%% to ovecome the marginpar bug
 
 \newcommand\todo{\bigskip\fbox{TODO}\bigskip}
 
@@ -40,7 +41,7 @@ This work is licensed under a Creative Commons
 Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 
 \newcommand\cclink{http://creativecommons.org/licenses/by-nc-sa/3.0/}
-See the \href{\cclink}{by-nc-sa page}\footnote{\cclink} for details.
+See the \href{\cclink}{by-nc-sa}\footnote{\cclink} page for details.
 
 \section*{Solutions to Part I}
 \input{m337-2013-1q01}

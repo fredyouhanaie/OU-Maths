@@ -2,10 +2,66 @@
 
 \begin{itemize}
 \item[(a)]
-\todo
+
+Let $R=\{ z: |z|<2 \}$, and $f(z)=\frac{\Log(2-z)}{z^2+4}$, then
+\begin{enumerate}
+\item $R$ is a simply-connected region
+\item $f$ is analytic on $R$
+\item $C$ is a closed contour in $R$
+\end{enumerate}
+Hence, by Cauchy's Theorem\hbm{B2}{1.4}
+\[
+\int_C \frac{\Log(2-z)}{z^2+4}\,dz = 0
+\]
+
 \item[(b)]
-\todo
+
+Let $R=\{ z: |z|<2 \}$, and $f(z)=\frac{\Log(2-z)}{z-2}$, then
+\begin{enumerate}
+\item $R$ is a simply-connected region
+\item $f$ is analytic on $R$
+\item $C$ is a simple-closed contour in $R$
+\item $z=0$ is inside $C$
+\end{enumerate}
+Hence, by Cauchy's Integral Formula \hbm{B2}{2.1}
+\begin{eqnarray*}
+f(0)	&=& \frac{1}{2\pi i} \int_C \frac{f(z)}{z}\, dz \\
+	&=& \frac{1}{2\pi i} \int_C \frac{\Log(2-z)/(z-2)}{z}\, dz \\
+\end{eqnarray*}
+where,
+\[ f(0) = \Log(2)/(-2) = -\log_e 2/2 \]
+
+\[
+\int_C \frac{\Log(2-z)}{z(z-2)}\,dz = -\frac{\log_e 2}{2}\times2\pi i = -\pi\log_e 2\,i
+\]
+
 \item[(c)]
-\todo
+
+Let $R=\{ z: |z|<2 \}$, and $f(z)=\Log(2-z)$, then
+\begin{enumerate}
+\item $R$ is a simply-connected region
+\item $f$ is analytic on $R$
+\item $C$ is a simple-closed contour in $R$
+\item $z=0$ is inside $C$
+\item $f$ is differentiable at $z=0$
+\end{enumerate}
+Hence, by Cauchy's 2nd Derivative Formula\hbm{B2}{3.1}
+\begin{eqnarray*}
+f^{(2)}(0)
+	&=& \frac{2!}{2\pi i} \int_C \frac{ f(z) }{ z^3 }\, dz \\
+	&=& \frac{1}{\pi i} \int_C \frac{ \Log(2-z) }{ z^3 }\, dz
+\end{eqnarray*}
+where,
+\begin{eqnarray*}
+f'(z)	&=& \frac{1}{2-z} \\
+\\
+f^{(2)}(z)
+	&=& \frac{1}{(2-z)^2}
+\end{eqnarray*}
+So,
+\[
+\int_C \frac{ \Log(2-z) }{ z^3 }\,dz = f^{(2)}(0)\pi i = \frac{\pi i}{2}
+\]
+
 \end{itemize}
 
