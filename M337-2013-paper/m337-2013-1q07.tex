@@ -2,10 +2,36 @@
 
 \begin{itemize}
 \item[(a)]
-\todo
+
+$q$ is continuous on $\Complex$, and its conjugate
+$\overline{q}(z) = z+1+i$
+is entire, hence $q$ is a model fluid flow.\hbm{D2}{1.14}
+
 \item[(b)]
+
+The complex potential function, $\Omega(z)$ for $q$ is a primitive of
+$\overline{q}$, so
+\[
+\Omega(z) = \frac{z^2}{2}+(1+i)z
+\]
+Now, for $z=x+iy$
+\begin{eqnarray*}
+\Omega(x+iy)
+	&=& \frac{ (x+iy)^2 }{ 2 } + (1+i)(x+iy) \\
+	&=& \frac{ x^2-y^2 +2xyi }{2} + x + iy + ix - y \\
+	&=& x^2/2 - y^2/2 + x - y + i(x + y + xy) \\
+	&=& \Phi(x,y) + i\Psi(x,y)
+\end{eqnarray*}
+So, $q$ has streamline $\Psi(x,y)=x+y+xy=C$, for constant $C$.\hbm{D2}{2.1}
+
+For the streamline through the point 1, $\Psi(1,0) = 1$, so, the
+streamline through point 1 has the equation $x+y+xy=1$, a hyperbola.
+
 \todo
+
 \item[(c)]
+
 \todo
+
 \end{itemize}
 
