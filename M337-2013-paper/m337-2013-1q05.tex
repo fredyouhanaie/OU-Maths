@@ -2,8 +2,62 @@
 
 \begin{itemize}
 \item[(a)]
-\todo
+
+$f$ has three simple poles at 0, 1/5 and 5. We shall use the cover-up
+rule to obtain the residues.\hbm{C1}{1.3}
+%%
+\begin{eqnarray*}
+\Res(f, 0)
+	&=& \frac{ z^2+1 }{ (5z-1)(z-5) } \\
+	&=& \frac{1}{(-1)(-5)} \\
+	&=& \frac{1}{5} \\
+\\
+\Res(f, 1/5)
+	&=& \frac{ z^2+1 }{ 5z(z-5) } \\
+	&=& \frac{ (1/5)^2+1 }{ 5(1/5)(1/5-5) } \\
+	&=& \frac{ 26/25 }{ -24/5 } \\
+	&=& -\frac{13}{60} \\
+\\
+\Res(f, 5)
+	&=& \frac{ z^2+1 }{ z(5z-1) } \\
+	&=& \frac{ 25+1 }{ 5(25-1) } \\
+	&=& \frac{13}{60}
+\end{eqnarray*}
+
 \item[(b)]
-\todo
+
+We shall use the strategy for evaluating
+$\int_0^{2\pi}\Phi(\cos t, \sin t)\,dt$.
+\hbm{C1}{2.2}
+
+After replacements, we have, for $C=\{z:|z|=1\}$
+\begin{eqnarray*}
+\int_0^{2\pi} \frac{ \cos t }{ 13-5\cos t }\,dt
+	&=& \int_C \frac{ \frac{1}{2}(z+1/z) }{ 13-\frac{5}{2}(z+1/z) } \times \frac{1}{iz}\,dz \\
+	&=& \int_C \frac{ z^2+1 }{ 26z-5z^2-5 } \times \frac{1}{iz}\,dz \\
+	&=& i \int_C \frac{ z^2+1 }{ z(5z^2-26z+5) }\,dz \\
+	&=& i \int_C \frac{ z^2+1 }{ z(5z-1)(z-5) }\,dz \\
+	&=& i \int_C f(z)\,dz
+\end{eqnarray*}
+%%
+Now, $f(z)$ is analytic on $\Complex$, a simply-connected region,
+exceptn for the three singularities. The unit circle $C$ is a
+simple-closed contour in $\Complex$, which does not pass through $f$'s
+singularities, then by Cauchy's Residue Theorem\hbm{C1}{2.1}
+\begin{eqnarray*}
+\int_C f(z)\,dz
+	&=& 2\pi i\left(\Res(f,0)+\Res(f,1/5)\right) \\
+	&=& 2\pi i\left(\frac{1}{5}-\frac{13}{60}\right) \\
+	&=& -\frac{\pi i}{30}
+\end{eqnarray*}
+%%
+Hence,
+\[
+\int_0^{2\pi} \frac{ \cos t }{ 13-5\cos t }\,dt
+	= i \int_C f(z)\,dz
+	= i \left( -\frac{\pi i}{30} \right)
+	= \frac{\pi}{30}
+\]
+
 \end{itemize}
 
