@@ -1,3 +1,5 @@
 *.aux
 *.log
 *.out
+*.pgf-plot.table
+*.pgf-plot.gnuplot
