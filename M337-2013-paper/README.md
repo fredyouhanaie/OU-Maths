@@ -1,4 +1,4 @@
-== M337 2013 exam solutions
+## M337 2013 exam solutions
 
 These are the source files for the solutions to the M337 (Complex
 Analysis) exam from 10.06.2013.
@@ -14,13 +14,13 @@ e.g. `m337-2013-1q02a1.tex`.
 
 To generate the PDF document use the command
 
-	`pdflatex m337-2013-1.tex`
+	pdflatex m337-2013-1.tex
 
 The plot of the hyperbola in Q7b is created with Tikz and gnuplot,
 depending on your setup you may need to used following command, to enable
 the gnuplot command to be executed.
 
-	`pdflatex --shell-escape m337-2013-1.tex`
+	pdflatex --shell-escape m337-2013-1.tex
 
 Enjoy!
 
