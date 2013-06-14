@@ -1,4 +1,4 @@
-== OU Maths
+## OU Maths
 
 This is a collection of various works I've done during my Mathematics
 Degree study at Open University.
