@@ -5,26 +5,102 @@
 
 \begin{itemize}
 \item[(i)]
-\todo
+
+Let $z=x+iy$, then
+\begin{eqnarray*}
+f(x+iy)	&=& (x+iy)(3+\overline{x+iy}) + \RE (x+iy) \\
+	&=& 3(x+iy) + x^2 + y^2 + x \\
+	&=& x^2+y^2+4x + i3y \\
+	&=& u(x,y) + iv(x,y)
+\end{eqnarray*}
+where, $u(x,y) = x^2+y^2+4x$ and $v(x,y) = 3y$.
+
 \item[(ii)]
-\todo
+
+The function $f$ is defined on $\Complex$. For $u$ and $v$, we have
+\[
+\begin{array}{ll}
+\frac{\partial u}{\partial x} = 2x+4
+	& \frac{\partial v}{\partial x} = 0 \\
+\\
+\frac{\partial u}{\partial y} = 2y
+	& \frac{\partial v}{\partial y} = 3
+\end{array}
+\]
+The Cauchy-Riemann equations for the above partial derivatives hold when
+$x=-\frac{1}{2}$ and $y=0$.\hbm{A4}{2.1}
+
+Now, $\alpha=\left(-\frac{1}{2},0\right)$, as $f$ is defined on $\Complex$ and the
+partial derivatives for $u$ and $v$:
+\begin{enumerate}
+\item exist on $\Complex$
+\item are continuous at $\alpha$
+\item satisfy the Cauchy-Riemann equations at $\alpha$
+\end{enumerate}
+then, by the Cauchy-Riemann Converse Theorem,\hbm{A4}{2.3} $f$ is
+differentiable at $\alpha$.
+
+Since $f$ is only differentiable at $\alpha$, then there is no region
+where $f$ is analytic and contains $\alpha$, hence $f$ is not analytic
+at $\left(-\frac{1}{2},0\right)$.\hbm{A4}{1.3}
+
 \item[(iii)]
-\todo
+
+From the Cauchy-Riemann Converse Theorem:\hbm{A4}{2.3}
+\begin{eqnarray*}
+f'\left(-\frac{1}{2}\right)
+	&=& \frac{\partial u}{\partial x}\left(-\frac{1}{2},0\right)
+		+ i\frac{\partial v}{\partial x}\left(-\frac{1}{2},0\right) \\
+	&=& 2\left(-\frac{1}{2}\right) + 4 + i0 \\
+	&=& 3
+\end{eqnarray*}
+
 \end{itemize}
 
 \item[(b)]
 
 \begin{itemize}
 \item[(i)]
-\todo
+
+Since $g$ is analytic on $\Complex-\{0\}$, with $g'(z) = 1-\frac{i}{z^2}$,
+and, since $g'(1)=1-i\ne0$, then $g$ is conformal at $1$.\hbm{A4}{4.6}
+
 \item[(ii)]
-\todo
+
+With $g(1)=1+i$, $|g'(1)|=|1-i|=\sqrt{2}$ and
+$\Arg(g'(1))=-\frac{\pi}{4}$,
+the effect of $g$ on a small disc centred at $1$ is to move it to $1+i$,
+scale it by $\sqrt{2}$ and rotate it by $\frac{\pi}{4}$ clockwise.\hbm{A4}{1.11}
+
 \item[(iii)]
-\todo
+
+Since, $\gamma_1(0) = e^{i0} = 1$ and $\gamma_2(1) = (1-1)i+1 = 1$,
+then $\gamma_1$ and $\gamma_2$ meet at $t=0$ and $t=1$ respectively.
+
+Let $\theta$ be the angle from $\Gamma_1$ to $\Gamma_2$ at $1$,
+then\footnote{From FY's copy of the handbook!}
+\hbm{A4}{1.12}
+\[
+\theta	= \Arg \left( \frac{ \gamma_2'(1) }{ \gamma_1'(0) } \right)
+	= \Arg \left( \frac{ ie^{i0} }{ 1+i } \right)
+	= \Arg \left( \frac{1}{2} + \frac{i}{2} \right)
+	= \frac{\pi}{4}
+\]
+Hence, at the point of intersection, the angle from $\Gamma_1$ to
+$\Gamma_2$ is $\frac{\pi}{4}$.
+
 \item[(iv)]
-\todo
+
+The paths are shown below:
+
+\input{m337-2013-1q09b-iv}
+
 \item[(v)]
-\todo
+
+The directions of $g(\Gamma_1)$ and $g(\Gamma_2)$ are shown below:
+
+\input{m337-2013-1q09b-v}
+
 \item[(vi)]
 \todo
 \end{itemize}
