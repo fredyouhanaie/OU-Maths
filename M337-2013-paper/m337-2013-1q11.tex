@@ -2,7 +2,33 @@
 
 \begin{itemize}
 \item[(a)]
-\todo
+
+We shall use the Cover-up rule\hbm{C1}{1.3} to obtain the residues at
+the three simple poles at $0$, $\frac{3}{4}i$ and $-\frac{3}{4}i$:
+\[
+f(z)	= \frac{ \pi\cot(\pi z) }{ 16z^2+9) }
+	= \frac{ \pi \cos(\pi z) }{ (4z-3i)(4z+3i)\sin(\pi z) }
+\]
+Hence,
+\begin{eqnarray*}
+\Res(f,0)
+	&=& \frac{ \pi \cos(\pi z) }{ (4z-3i)(4z+3i) } \\
+	&=& \frac{ \pi }{ (-3i)(3i) } \\
+	&=& \frac{ \pi }{ 9 } \\
+\\
+\Res\left(f,\frac{3}{4}i\right)
+	&=& \frac{ \pi \cos(\pi z) }{ 4(4z+3i)\sin(\pi z) } \\
+	&=& \frac{ \pi/\sqrt{2} }{ 4(3i+3i)/(-\sqrt{2}) } \\
+	&=& -\frac{ \pi }{ 24i } \\
+	&=& \frac{\pi}{24}i \\
+\\
+\Res\left(f,-\frac{3}{4}i\right)
+	&=& \frac{ \pi \cos(\pi z) }{ 4(4z-3i)\sin(\pi z) } \\
+	&=& \frac{ -\pi/\sqrt{2} }{ 4(-3i-3i)/(-\sqrt{2}) } \\
+	&=& \frac{ \pi }{ 24i } \\
+	&=& -\frac{\pi}{24}i
+\end{eqnarray*}
+
 \item[(b)]
 \todo
 \item[(c)]

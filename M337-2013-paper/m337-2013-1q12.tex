@@ -2,18 +2,78 @@
 
 \begin{itemize}
 \item[(a)]
-\todo
+
+We have the mapping from
+$\alpha=-1$, $\beta=\infty$ and $\gamma=-i$
+to the standard triple of points,
+$\alpha'=0$, $\beta'=1$ and $\gamma'=\infty$ respectively,
+hence\hbm{D1}{2.11}
+%
+\begin{eqnarray*}
+\hat{f}(z)
+	&=& \frac{ (z-\alpha)(\beta-\gamma) }{ (z-\gamma)(\beta-\alpha) } \\
+	&=& \frac{ (z-(-1))(\infty-(-i)) }{ (z-(-i))(\infty-(-1)) } \\
+	&=& \frac{ z+1 }{ z+i }
+\end{eqnarray*}
+
 \item[(b)]
 
 \begin{itemize}
 \item[(i)]
-\todo
+
+The three regions are shown below:
+
+\input{m337-2013-1q12b-i}
+
 \item[(ii)]
-\todo
+
+The two boundaries (arcs) on $R$ map to the two boundaries (rays) in $S$.
+
+$R$ is bounded, and $-i$ on $R$ is mapped to $\infty$ on $S$, which
+is unbounded.
+
+The angle of intersection of the arcs on $R$ at $-1$ is $\frac{\pi}{2}$,
+this angle is preserved on the intersection of the two boundary rays of
+$S$ at $0$.
+
+The point $\infty$ is outside the bounded region $R$, this point is
+mapped to $1$, which is also outside $S$
+
+The point $\frac{1}{2}(-1-i)$ is in $R$, this point maps to $-1$, which
+is in $S$.
+
+Hence, $f$ is a conformal mapping from $R$ to $S$.
+
 \item[(iii)]
-\todo
+
+We can map the region $S$ to the region $T$ with the square function,
+$f_2(z_1)=z_1^2$, so $z_1\in S$ is mapped to $w\in T$.
+
+Since the M\"{o}bius Transformation, $f_1$, is one-one and conformal
+on $R$ and the square function, $f_2$, is one-one and conformal on $S$,
+we can use their composite to map $R$ to $T$, $f = f_2 \circ f_1$, hence
+\[
+f(z) = f_2 ( f_1(z) ) = \left( \frac{ z+1 }{ z+i } \right)^2
+\]
+is a one-one conformal mapping from $R$ to $T$.
+
 \item[(iv)]
-\todo
+For the inverse function we have $f^{-1} = f_1^{-1} \circ f_2^{-1}$,
+where
+\[
+z_1 = f_2^{-1}(w) = -\sqrt{w}
+\]
+and\hbm{D1}{2.6}
+\[
+z = f_1^{-1}(z_1) = \frac{ iz_1 - 1 }{ -z_1 + 1 }
+\]
+Hence,
+\[
+z	= f^{-1}(w)
+	= \frac{ i(-\sqrt{w}) - 1 }{ -(-\sqrt{w}) + 1 }
+	= \frac{ -i\sqrt{w} - 1 }{ \sqrt{w} + 1 }
+\]
+
 \end{itemize}
 
 \end{itemize}
