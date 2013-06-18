@@ -1,0 +1,281 @@
+%
+%	This is the original solution for Q11 supplied by Dominic Corbett
+%
+\documentclass[10pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\newcommand{\deriv}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\nicederiv}[2]{\nicefrac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\hderiv}[3]{\frac{\mathrm{d}^#1 #2}{\mathrm{d}#3^#1}}	% higher derivatives
+\newcommand{\nicehderiv}[3]{\nicefrac{\mathrm{d}^#1 #2}{\mathrm{d}#3^#1}}
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\nicepderiv}[2]{\nicefrac{\partial #1}{\partial #2}}
+\newcommand{\psderiv}[3]{\frac{\partial ^2#1}{\partial #2\partial #3}}
+\newcommand{\phderiv}[3]{\frac{\partial^#1 #2}{\partial#3^#1}}	% higher pure partial derivatives
+\newcommand{\nicepsderiv}[3]{\nicefrac{\partial ^2#1}{\partial #2\partial #3}}
+\newcommand{\dd}{\, \mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Rr}{\mathcal{R}}
+\newcommand{\Ss}{\mathcal{S}}
+\newcommand{\Tt}{\mathcal{T}}
+\newcommand{\ve}[1]{\mathbf{#1}}
+\newcommand{\st}{\ensuremath{^\mathrm{st}}}
+\newcommand{\nd}{\ensuremath{^\mathrm{nd}}}
+\newcommand{\rd}{\ensuremath{^\mathrm{rd}}}
+\newcommand{\nth}{\ensuremath{^\mathrm{th}}}
+\newcommand{\comb}[2]{^{#1}C_{#2}}
+\newcommand{\perm}[2]{^{#1}P_{#2}}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\Wnd}{Wnd}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\cosec}{cosec}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\cosech}{cosech}
+\newcommand{\gv}[1]{\mbox{\boldmath$ #1 $}}						% for vectors of Greek letters
+\newcommand{\uv}[1]{\mathbf{\hat{#1}}}							% for unit vector
+\newcommand{\grad}[1]{\gv{\nabla} #1}								% for gradient
+\let\divsymb=\div												% rename builtin command \div to \divsymb
+\renewcommand{\div}[1]{\gv{\nabla} \cdot #1}						% for divergence
+\newcommand{\curl}[1]{\gv{\nabla} \times #1}						% for curl
+\newcommand\Fr{\mathit{Fr}}										% for the Froude number
+\newcommand\Reynolds{\mathit{Re}}								% for the Reynolds number
+%% column vectors section ->
+\newcount\colveccount
+\newcommand*\colvec[1]{
+        \global\colveccount#1
+        \begin{pmatrix}
+        \colvecnext
+}
+\def\colvecnext#1{
+        #1
+        \global\advance\colveccount-1
+        \ifnum\colveccount>0
+                \\
+                \expandafter\colvecnext
+        \else
+                \end{pmatrix}
+        \fi
+}
+%% <- column vectors section
+\usepackage{fullpage}
+\usepackage{tensor}
+\delimitershortfall-1sp
+\newcommand{\del}[1]{\left(#1\right)}
+\newcommand{\cbr}[1]{\left\{#1\right\}}
+\newcommand{\sbr}[1]{\left[#1\right]}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\intcc}[2]{\left[#1 , #2\right]}
+\newcommand{\intoc}[2]{\left]#1 , #2\right]}
+\newcommand{\intco}[2]{\left[#1 , #2\right[}
+\newcommand{\intoo}[2]{\left]#1 , #2\right[}
+\newcommand{\eval}[2]{\left. #1 \right|_{ #2 }}
+\usepackage{bigints}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{grffile}
+\usepackage{siunitx}
+\usepackage{nicefrac}
+\usepackage[normalem]{ulem}
+%% left margin-aligned headings ->
+\usepackage[explicit]{titlesec}
+\usepackage{enumitem}
+\titleformat{\subsubsection}%
+            [hang]% shape
+            {}% format
+            {\llap{% label
+               Q\textsuperscript{n}\thesubsubsection\hskip 9pt}#1}%
+            {0pt}% horizontal sep
+            {}% before
+
+\titleformat{\paragraph}%
+        [runin]% shape
+        {}% format
+        {\llap{% label
+           \theparagraph\hskip 9pt}#1}%
+        {0pt}% horizontal sep
+        {}% before
+        
+\titleformat{\subparagraph}%
+        [runin]% shape
+        {}% format
+        {\llap{% label
+           \thesubparagraph\hskip 9pt}#1}%
+        {0pt}% horizontal sep
+        {}% before
+
+\titlespacing*{\subparagraph}{0pt}{*1}{0em}
+%% <- left margin-aligned headings
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{M337 --- 2013 Exam Solutions}
+\chead{}
+\rhead{DBJC}
+\headsep = 10pt
+\lfoot{}
+\cfoot{\thepage\ of \pageref{LastPage}}
+\rfoot{}
+\renewcommand{\headheight}{12.0pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\definecolor{light-gray}{gray}{0.75}
+\definecolor{light-light-gray}{gray}{0.875}
+\usetikzlibrary{arrows,decorations.markings,intersections}
+\setcounter{secnumdepth}{5}
+\def\thesubsubsection{\arabic{subsubsection}}
+\def\theparagraph{(\alph{paragraph})}
+\def\thesubparagraph{(\roman{subparagraph})}
+\numberwithin{equation}{subsubsection}
+\numberwithin{figure}{subsubsection}
+\setcounter{subsubsection}{10}
+\usepackage{xr-hyper}
+\usepackage[bookmarks=true,backref=section,colorlinks=true,linkcolor=black,pdftitle={M337 2013 Exam Solutions},pdfauthor={DBJC}]{hyperref}
+\begin{document}
+\subsubsection{}
+\paragraph{Note that}
+\begin{align*}
+	f ( z )
+	&=
+	\frac{ \pi \cos ( \pi z ) }{ \del{ 4 z + 3 i } \del{ 4 z - 3 i } \sin ( \pi z ) }
+\intertext{so by the cover-up rule (\textit{HB28---1.3})}
+	\Res ( f , - i \tfrac{3}{4} )
+	&=
+	\frac{ \pi \cos ( - \pi i \tfrac{3}{4} ) }{ 4 \del{ 4 ( - i \tfrac{3}{4} ) - 3 i } \sin ( - \pi i \tfrac{3}{4} ) }
+	\\
+	&=
+	\frac{ \pi \cosh ( - \tfrac{3}{4} \pi ) }{ - 24 i^2 \sinh ( - \tfrac{3}{4} \pi ) }
+	\\
+	&=
+	\underline{\underline{
+	- \tfrac{ \pi }{ 24 } \coth ( \tfrac{3}{4} \pi )
+	}}
+\intertext{and}
+	\Res ( f , i \tfrac{3}{4} )
+	&=
+	\frac{ \pi \cos ( \pi i \tfrac{3}{4} ) }{ 4 \del{ 4 ( i \tfrac{3}{4} ) + 3 i } \sin ( \pi i \tfrac{3}{4} ) }
+	\\
+	&=
+	\frac{ \pi \cosh ( \tfrac{3}{4} \pi ) }{ 24 i^2 \sinh ( \tfrac{3}{4} \pi ) }
+	\\
+	&=
+	\underline{\underline{
+	- \tfrac{ \pi }{ 24 } \coth ( \tfrac{3}{4} \pi )
+	}}
+\intertext{and by the $ g/h $ rule (\textit{HB28---1.2})}
+	\Res ( f , 0 )
+	&=
+	\frac{ \pi \cos ( \pi (0) ) }{ \del{ 4 (0) + 3 i } \del{ 4 (0) - 3 i } \pi \cos ( \pi (0) ) }
+	\\
+	&=
+	\frac{ 1 }{ ( 3 i ) ( - 3 i ) }
+	\\
+	&=
+	\underline{\underline{
+	\tfrac{ 1 }{ 9 }
+	}}
+\end{align*}
+\paragraph{$ \phi ( n ) = \frac{1}{16 n^2 + 9} $ is an even function which is analytic on $ \C $ except for poles at the points $ \tfrac{3}{4} i $ and $ - \tfrac{3}{4} i $. Now, if $ S_N $ is the square contour with vertices at $ (N + \tfrac{1}{2})(\pm 1 \pm i) $, then its length is $ L = 4 ( 2 N + 1 ) $ and}
+\label{11b}
+\begin{align*}
+	\abs{\cot \pi z}
+	&\leq
+	2
+	&&\text{for $ z \in S_N $ (\textit{HB30---4.2})}
+\intertext{and since $ \abs{ z } \geq N + \frac{1}{2} $ for $ z \in S_N $, we have}
+	\abs{ 16 z^2 + 9 }
+	&\geq
+	\abs{ \abs{ 16 z^2 } - \abs{ 9 } }
+	&&(\textit{HB11---5.2})
+	\\
+	&=
+	\abs{ 16 \abs{ z }^2 - 9 }
+	\\
+	&\geq
+	\abs{ 16 ( N + \tfrac{1}{2} )^2 - 9 }
+	&&\text{for $ z \in S_N $}
+	\\
+	\therefore
+	\abs{ f ( z ) }
+	=
+	\abs{ \frac{ \pi \cot ( \pi z ) }{ 16 z^2 + 9 } }
+	&\leq
+	\frac{ 2 \pi }{ 16 ( N + \tfrac{1}{2} )^2 - 9 }
+	=
+	M
+	&&\text{for $ z \in S_N $}
+\intertext{Hence, by the Estimation Theorem,}
+	\abs{ \int_{S_N} f ( z ) \dd z }
+	&\leq
+	\frac{ 2 \pi }{ 16 ( N + \tfrac{1}{2} )^2 - 9 } \cdot 4 ( 2 N + 1 ) ,
+\intertext{which tends to $ 0 $ as $ N \to \infty $, that is}
+	\lim_{N\to\infty} \int_{S_N} f ( z ) \dd z
+	&=
+	0
+\intertext{It follows by \textit{HB30---4.1} that}
+	\sum_{n=1}^\infty \frac{1}{16 n^2 + 9}
+	&=
+	- \tfrac{1}{2} \del{ \Res ( f , 0 ) + \Res ( f , - i \tfrac{3}{4} ) + \Res ( f , i \tfrac{3}{4} ) }
+	\\
+	&=
+	- \tfrac{1}{2} \del{ \tfrac{ 1 }{ 9 } - \tfrac{ \pi }{ 24 } \coth ( \tfrac{3}{4} \pi ) - \tfrac{ \pi }{ 24 } \coth ( \tfrac{3}{4} \pi ) }
+	\\
+	&=
+	\underline{\underline{
+	\tfrac{ \pi }{ 24 } \coth ( \tfrac{3}{4} \pi ) - \tfrac{1}{18}
+	}}
+\end{align*}
+\paragraph{Since}
+\begin{align*}
+	\sum_{n=-\infty}^\infty \frac{1}{16 n^2 + 9}
+	&=
+	\sum_{n=-\infty}^{-1} \frac{1}{16 n^2 + 9}
+	+
+	\frac{1}{16 (0)^2 + 9}
+	+
+	\sum_{n=1}^\infty \frac{1}{16 n^2 + 9}
+	\\
+	&=
+	\sum_{n=\infty}^{1} \frac{1}{16 (-n)^2 + 9}
+	+
+	\frac{1}{9}
+	+
+	\sum_{n=1}^\infty \frac{1}{16 n^2 + 9}
+	\\
+	&=
+	\frac{1}{9}
+	+
+	2 \sum_{n=1}^\infty \frac{1}{16 n^2 + 9}
+	&&\text{(sum of positive reals indp't of order)}
+\intertext{we can simply substitute in our result from part~\ref{11b} to give}
+	\sum_{n=-\infty}^\infty \frac{1}{16 n^2 + 9}
+	&=
+	\frac{1}{9}
+	+
+	\tfrac{ 2 \pi }{ 24 } \coth ( \tfrac{3}{4} \pi ) - \tfrac{2}{18}
+	\\
+	&=
+	\underline{\underline{
+	\tfrac{ \pi }{ 12 } \coth ( \tfrac{3}{4} \pi )
+	}}
+	&&\textsc{qed}
+\end{align*}
+
+{\noindent}\rule{\textwidth}{1pt}
+\end{document}
