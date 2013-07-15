@@ -10,6 +10,7 @@
 \usepackage{tikz}
 \usepackage{placeins}
 \usepackage{mparhack}	%% to overcome the marginpar bug
+\usepackage{nicefrac}
 \usepackage[		%% for the pdf \href etc.
 	pdfwindowui=true,
 	pdfauthor={Fred Youhanaie},
@@ -38,9 +39,16 @@
 \DeclareMathOperator{\re}{Re}
 \DeclareMathOperator{\im}{Im}
 
+% used in DBJC's solutions for Q10 and Q11
+\newcommand{\dd}{\, \mathrm{d}}
+\newcommand{\del}[1]{\left(#1\right)}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\cbr}[1]{\left\{#1\right\}}
+\newcommand{\C}{\mathbb{C}}
+
 \title{Solutions to the M337/B 2013 Exam Paper}
 \author{Fred Youhanaie (Ed.)}
-\date{18 June, 2013}
+\date{15 July, 2013}
 
 \begin{document}
 \maketitle
@@ -98,7 +106,7 @@ VC	& Vikki Cookson \\
 \section*{Solutions to Part II}
 \input{m337-2013-1q09}
 \newpage
-\input{m337-2013-1q10}
+\input{m337-2013-1q10dc}
 \newpage
 \input{m337-2013-1q11}
 \newpage

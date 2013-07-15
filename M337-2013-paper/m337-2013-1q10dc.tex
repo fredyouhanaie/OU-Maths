@@ -1,0 +1,113 @@
+
+%
+%	This is the modified solution for Q10 supplied by Dominic Corbett
+%
+
+\subsection*{Solution 10}
+
+\begin{itemize}
+\item[(a)][DC]
+
+\begin{itemize}
+\item[(i)]
+
+$f$ has exactly two singularities: a simple pole at $ z = 1 $ and
+another simple pole at $ z = 5 $.
+
+\item[(ii)]
+
+Let $ z - 2 = h $, so that $ z = 2 + h $. Then, for $ z \neq 1 , 5 $,
+\begin{align*}
+	f ( z )
+	&=
+	\frac{1}{\del{1 + h}\del{-3 + h}}
+	\\
+	&=
+	- \frac{1}{4 \del{ 1 + h }} + \frac{1}{4 \del{ -3 + h }}
+	\\
+	&=
+	- \frac{1}{4 h} \frac{1}{\del{ 1 + 1/h }} - \frac{1}{12} \frac{1}{\del{ 1 - h/3 }}
+	\\
+	&=
+	- \frac{1}{4 h} \del{ 1 + \del{-\frac{1}{h}} + \del{-\frac{1}{h}}^2 + \cdots } - \frac{1}{12} \del{ 1 + \frac{h}{3} + \del{\frac{h}{3}}^2 + \cdots }
+	&&\text{for $ \abs{-1} < \abs{h} < \abs{3} $}
+	\\
+	&=
+	- \frac{1}{4 h} + \frac{1}{4 h^2} - \frac{1}{12} - \frac{h}{36} - \frac{h^2}{108} + \cdots
+	\\
+	&=
+	\underline{\underline{
+	\cdots + \tfrac{1}{4} \del{z - 2}^{-2} - \tfrac{1}{4} \del{z - 2}^{-1} - \tfrac{1}{12} - \tfrac{1}{36} \del{z - 2} - \tfrac{1}{108} \del{z - 2}^2 + \cdots
+	}}
+	&&\text{for $ 1 < \abs{z - 2} < 3 $}
+\end{align*}
+
+\end{itemize}
+
+\item[(b)][DC]
+
+\begin{itemize}
+\item[(i)]
+
+Let
+
+\begin{align*}
+	g
+	&=
+	g_1 \circ \del{ g_2 \cdot g_3 }
+\intertext{Now, $ g_3 ( z ) = \sin z $ is represented by the basic Taylor series}
+	z &- \frac{z^3}{3!} + \cdots
+\intertext{on $ \C $ (\textit{HB25---3.5}). $ g_2 ( z ) = z $ is its own Taylor series and represents $ g_2 $ on $ \C $. It follows by the Product Rule (\textit{HB26---4.2}) that $ g_2 \cdot g_3 $ is represented by the Taylor series}
+	z^2 &- \frac{z^4}{3!} + \cdots
+\intertext{also on $ \C $. Since $ g_1 ( w ) = \exp ( w ) $ is represented by the basic Taylor series}
+	1 &+ w + \frac{w^2}{2!} + \cdots
+\intertext{on $ \C $ (\textit{HB25---3.5}), it follows from the above and the Composition Rule (\textit{HB25---4.3}) that $ g = g_1 \circ \del{ g_2 \cdot g_3 } $ is represented by the Taylor series}
+	g ( z )
+	&=
+	1 + \del{ z^2 - \frac{z^4}{3!} + \cdots } + \frac{1}{2!} \del{ z^2 + \cdots }^2
+	\\
+	&=
+	\underline{\underline{
+	1 + z^2 + \frac{z^4}{3} + \cdots
+	}}
+	&&\text{for $ \abs{ z } < r $,}
+\end{align*}
+where $ r > 0 $.
+
+In addition, by the Chain Rule applied to standard derivatives
+(\textit{HB18---1.6} \& \textit{HB19---3.1,4}) $ g $ is entire, so it
+follows by \textit{HB25---3.3} that the Taylor series for $ g $ about any
+point converges to $ f ( z ) $ for all $ z \in \C $, and in particular
+that $ 1 + z^2 + \frac{z^4}{3} + \cdots $, the Taylor series about $
+0 $, \underline{\underline{represents $ g $ on $ \C $}}.
+
+\item[(ii)]
+
+By composing the above Taylor series with $ z \mapsto z^{-1} $ (which
+is its own Laurent series) and taking the product with $ z \mapsto z^3 $
+(which is its own Taylor series), we have
+\begin{align*}
+	z^3 g ( \nicefrac{1}{z} )
+	&=
+	z^3 \del{ 1 + z^{-2} + \frac{z^{-4}}{3} + \cdots }
+	\\
+	&=
+	z^3 + z + \frac{1}{3 z} + \cdots
+\intertext{which is analytic on the punctured disc $ \C - \cbr{0} $ with centre $ 0 $. Since $ C \in \C $ has centre $ 0 $, it follows by \textit{HB28---4.2} that}
+	\Res \del{ z^3 g ( \nicefrac{1}{z} ) , 0 }
+	&=
+	\nicefrac{1}{3}
+\intertext{and that}
+	\int_C z^3 g ( \nicefrac{1}{z} ) \dd z
+	&=
+	2 \pi i \times \Res \del{ z^3 g ( \nicefrac{1}{z} ) , 0 }
+	\\
+	&=
+	\underline{\underline{
+	\nicefrac{2 \pi i}{3}
+	}}
+\end{align*}
+
+\end{itemize}
+
+\end{itemize}
